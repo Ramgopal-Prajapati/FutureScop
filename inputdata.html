@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future With Ramgopal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        p {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        label {
+            font-weight: bold;
+        }
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #21b83fa4;
+            color: #100e0e;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto 0;
+            animation: breathing 2s infinite ease-in-out;
+        }
+        
+        @keyframes breathing {
+            0% { transform: scale(1); 
+                background-color: #53e818;}
+            50% { transform: scale(1);
+                background-color: #3deab9; }
+            100% { transform: scale(1);
+                background-color: #d7cd11; }
+        }
+        
+        button:hover {
+            background-color: #50f137;
+        }
+        @keyframes fadeInBtn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        #options {
+            animation: fadeInOptions 0.5s ease-in-out;
+        }
+        @keyframes fadeInOptions {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Future Options</h1>
+        <p>Some students are confused about their future options. They don't have an idea about their career, which field is better, future scope, and many more.</p>
+        <h2>Don't Worry, I Will Help You!</h2>
+        <label for="qualification">Qualifications:</label>
+        <select id="qualification">
+            <option>Select Higher Qualification</option>
+            <option value="10th pass">10th pass</option>
+            <option value="12th pass">12th pass</option>
+            <option value="Diploma">Diploma</option>
+            <option value="Graduation">Graduation</option>
+            <!-- Add more options as needed -->
+        </select>
+        <label for="interest">Interests:</label>
+        <select id="interest">
+            <option>Select Interest</option>
+            <option value="Programming">Programming</option>
+            <option value="Engineering">Engineering</option>
+            <option value="Medicine">Medicine</option>
+            <option value="Art">Art</option>
+            <!-- Add more options as needed -->
+        </select>
+        <button onclick="suggestOptions()">Get Future Options</button><br><br>
+        <div id="options"></div>
+    </div>
+
+    <script>
+        function suggestOptions() {
+            var qualification = document.getElementById("qualification").value;
+            var interest = document.getElementById("interest").value;
+            var optionsDiv = document.getElementById("options");
+            optionsDiv.innerHTML = "";
+
+            // Call the appropriate function based on qualification and interest
+            if (qualification === "12th pass" && interest === "Programming") {
+                suggestProgrammingOptions();
+            } else if (qualification === "12th pass" && interest === "Engineering") {
+                suggestEngineeringOptions();
+            } else if (qualification === "Graduation" && interest === "Programming") {
+                suggestGradProgrammingOptions();
+            } else if (qualification === "Graduation" && interest === "Engineering") {
+                suggestGradEngineeringOptions();
+            } else {
+                optionsDiv.innerHTML = "Sorry, no options available for the selected qualification and interest.";
+            }
+        }
+
+        // Define different functions for different combinations of qualification and interest
+        function suggestProgrammingOptions() {
+            var optionsDiv = document.getElementById("options");
+            var suggestion = "Based on your qualification (12th pass) and interest (Programming), some future options could be: <ul><li>BSC (Computer Science)</li><li>BSC (Information Technology)</li><li>B.Tech-Bachelor of Technology</li><li>BCA-Bachelor of Computer Application</li><li>BSC-Bachelor of Science</li><li>Technical Study</li><li>Engineering (Various Branch) </li></ul>";
+            optionsDiv.innerHTML = suggestion;
+        }
+
+        function suggestEngineeringOptions() {
+            var optionsDiv = document.getElementById("options");
+            var suggestion = "Based on your qualification (12th pass) and interest (Engineering), some future options could be: <ul><li>Engineering job positions</li><li>Further studies in engineering</li></ul>";
+            optionsDiv.innerHTML = suggestion;
+        }
+
+        function suggestGradProgrammingOptions() {
+            var optionsDiv = document.getElementById("options");
+            var suggestion = "Based on your qualification (Graduation) and interest (Programming), some future options could be: <ul><li>Software developer positions</li><li>Master's degree in computer science</li></ul>";
+            optionsDiv.innerHTML = suggestion;
+        }
+
+        function suggestGradEngineeringOptions() {
+            var optionsDiv = document.getElementById("options");
+            var suggestion = "Based on your qualification (Graduation) and interest (Engineering), some future options could be: <ul><li>Engineering manager positions</li><li>PhD in engineering</li></ul>";
+            optionsDiv.innerHTML = suggestion;
+        }
+    </script>
+</body>
+</html>
