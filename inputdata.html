@@ -14,20 +14,27 @@
         .container {
             max-width: 600px;
             margin: 50px auto;
-            padding: 20px;
+            padding: 10px;
             background-color: #fff;
             border-radius: 8px;
+            border: 5px solid green;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 0.5s ease-in-out;
+            animation: fadeIn 2s  infinite  ease-in-out;
         }
         @keyframes fadeIn {
             from {
-                opacity: 0;
-                transform: translateY(-20px);
+                
+                border-top:5px solid #50f137;
+                border-left: 5px solid #d7cd11;
+                border-bottom:5px solid #333;
+                border-right:5px solid #ea7676;
             }
             to {
-                opacity: 1;
-                transform: translateY(0);
+               
+                border-top:5px solid #a2ef96;
+                border-left:5px solid #1b5ee4;
+                border-bottom:5px solid #f01515;
+                border-right: 5px solid #14a9c7;
             }
         }
         h1 {
@@ -107,13 +114,17 @@
         <h1>Future Options</h1>
         <p>Some students are confused about their future options. They don't have an idea about their career, which field is better, future scope, and many more.</p>
         <h2>Don't Worry, I Will Help You!</h2>
+        <h3>Enter Your Basic Information and Get the Best option for your career!</h3><hr><hr><br><br>
         <label for="qualification">Qualifications:</label>
         <select id="qualification">
             <option>Select Higher Qualification</option>
+            <option value="10th pass">8th pass</option>
             <option value="10th pass">10th pass</option>
             <option value="12th pass">12th pass</option>
             <option value="Diploma">Diploma</option>
             <option value="Graduation">Graduation</option>
+            <option value="ITI">ITI</option>
+
             <!-- Add more options as needed -->
         </select>
         <label for="interest">Interests:</label>
@@ -123,6 +134,23 @@
             <option value="Engineering">Engineering</option>
             <option value="Medicine">Medicine</option>
             <option value="Art">Art</option>
+            <option value="Cloud">Cloud Computing </option>
+            <option value="Blockchain">Art</option>
+            <option value="Art">Blockchain</option>
+            <option value="WebDevelopment">Web Development</option>
+            <option value="AppDevelopment">App Development</option>
+            <option value="Government">Government Sector</option>
+            <option value="UPSC">UPSC</option>
+            <option value="Ssc">Ssc</option>
+            <option value="Banking">Banking</option>
+            <option value="Doctor">Doctor</option>
+            <option value="Law">Law</option>
+            <option value="History">History</option>
+            <option value="Gate">Gate</option>
+            <option value="Phd">PhD</option>
+            <option value="ITI">ITI</option>
+
+
             <!-- Add more options as needed -->
         </select>
         <button onclick="suggestOptions()">Get Future Options</button><br><br>
@@ -139,13 +167,173 @@
             // Call the appropriate function based on qualification and interest
             if (qualification === "12th pass" && interest === "Programming") {
                 suggestProgrammingOptions();
-            } else if (qualification === "12th pass" && interest === "Engineering") {
+            } 
+            else if (qualification === "10th pass" && interest === "Programming") {
                 suggestEngineeringOptions();
-            } else if (qualification === "Graduation" && interest === "Programming") {
-                suggestGradProgrammingOptions();
-            } else if (qualification === "Graduation" && interest === "Engineering") {
+            } 
+            else if (qualification === "8th pass" && interest === "Programming") {
+                suggestEngineeringOptions();
+            } 
+            else if (qualification === "Diploma" && interest === "Programming") {
+                suggestEngineeringOptions();
+            } 
+            else if (qualification === "ITI" && interest === "Programming") {
+                suggestEngineeringOptions();
+            } 
+            else if (qualification === "Graduation" && interest === "Programming") {
+                suggestEngineeringOptions();
+            } 
+            
+            
+            
+            else if (qualification === "12th pass" && interest === "Engineering") {
+                suggestEngineeringOptions();
+            } 
+            else if (qualification === "10th pass" && interest === "Engineering") {
+                suggestEngineeringOptions();
+            } 
+            else if (qualification === "8th pass" && interest === "Engineering") {
+                suggestEngineeringOptions();
+            } 
+            else if (qualification === "Diploma" && interest === "Engineering") {
+                suggestEngineeringOptions();
+            } 
+            else if (qualification === "ITI" && interest === "Engineering") {
+                suggestEngineeringOptions();
+            } 
+
+
+
+
+            else if (qualification === "8th pass" && interest === "UPSC") {
+                suggestEngineeringOptions();
+            } 
+            else if (qualification === "10th pass" && interest === "UPSC") {
+                suggestEngineeringOptions();
+            } 
+            else if (qualification === "12th pass" && interest === "UPSC") {
+                suggestEngineeringOptions();
+            } 
+            else if (qualification === "Diploma" && interest === "UPSC") {
+                suggestEngineeringOptions();
+            } 
+            else if (qualification === "Graduation" && interest === "UPSC") {
+                suggestEngineeringOptions();
+            } 
+            else if (qualification === "ITI" && interest === "UPSC") {
+                suggestEngineeringOptions();
+            } 
+            
+            
+            
+           
+            else if (qualification === "Graduation" && interest === "Phd") {
+                suggestGradPhdOptions();
+            } 
+
+
+            else if (qualification === "10th pass" && interest === "Art") {
+                suggestGradArtOptions();
+            }
+            else if (qualification === "12th pass" && interest === "Art") {
+                suggestGradArtOptions();
+            }
+
+
+            else if (qualification === "10th pass" && interest === "ITI") {
                 suggestGradEngineeringOptions();
-            } else {
+            }
+            else if (qualification === "8th pass" && interest === "ITI") {
+                suggestGradEngineeringOptions();
+            }
+            else if (qualification === "12th pass" && interest === "ITI") {
+                suggestGradEngineeringOptions();
+            }
+            else if (qualification === "Diploma" && interest === "ITI") {
+                suggestGradEngineeringOptions();
+            }
+            else if (qualification === "Graduation" && interest === "ITI") {
+                suggestGradEngineeringOptions();
+            }
+            
+            
+            
+            else if (qualification === "Graduation" && interest === "Banking") {
+                suggestGradBankingOptions();
+            }
+            else if (qualification === "10th pass" && interest === "Banking") {
+                suggestGradBankingOptions();
+            }
+            else if (qualification === "8th pass" && interest === "Banking") {
+                suggestGradBankingOptions();
+            }
+            else if (qualification === "12th pass" && interest === "Banking") {
+                suggestGradBankingOptions();
+            }
+            else if (qualification === "Diploma" && interest === "Banking") {
+                suggestGradBankingOptions();
+            }
+            else if (qualification === "ITI" && interest === "Banking") {
+                suggestGradBankingOptions();
+            }
+            
+            
+            else if (qualification === "Graduation" && interest === "Doctor") {
+                suggestGradDoctorOptions();
+            }
+            else if (qualification === "8th pass" && interest === "Doctor") {
+                suggestGradDoctorOptions();
+            }
+            else if (qualification === "10th pass" && interest === "Doctor") {
+                suggestGradDoctorOptions();
+            }
+            else if (qualification === "12th pass" && interest === "Doctor") {
+                suggestGradDoctorOptions();
+            }
+            else if (qualification === "Diploma" && interest === "Doctor") {
+                suggestGradDoctorOptions();
+            }
+            else if (qualification === "ITI" && interest === "Doctor") {
+                suggestGradDoctorOptions();
+            }
+
+            
+            else if (qualification === "12th pass" && interest === "Cloud") {
+                suggestGradEngineeringOptions();
+            }
+            else if (qualification === "10th pass" && interest === "Cloud") {
+                suggestGradEngineeringOptions();
+            }
+            else if (qualification === "8th pass" && interest === "Cloud") {
+                suggestGradEngineeringOptions();
+            }
+            else if (qualification === "Diploma" && interest === "Cloud") {
+                suggestGradEngineeringOptions();
+            }
+            else if (qualification === "Graduation" && interest === "Cloud") {
+                suggestGradEngineeringOptions();
+            }
+            else if (qualification === "ITI" && interest === "Cloud") {
+                suggestGradEngineeringOptions();
+            }
+            
+
+            else if (qualification === "Graduation" && interest === "Government") {
+                suggestGradEngineeringOptions();
+            }else if (qualification === "12th pass" && interest === "Government") {
+                suggestGradEngineeringOptions();
+            }else if (qualification === "ITI" && interest === "Government") {
+                suggestGradEngineeringOptions();
+            }else if (qualification === "10th pass" && interest === "Government") {
+                suggestGradEngineeringOptions();
+            }else if (qualification === "Diploma" && interest === "Government") {
+                suggestGradEngineeringOptions();
+            }else if (qualification === "8th pass" && interest === "Government") {
+                suggestGradEngineeringOptions();
+            }
+            
+            else {
+
                 optionsDiv.innerHTML = "Sorry, no options available for the selected qualification and interest.";
             }
         }
